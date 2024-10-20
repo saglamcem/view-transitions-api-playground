@@ -1,0 +1,14 @@
+<div class="artist-page-container" *ngIf="artist$ | async as artist">
+  <div class="img-container" [ngStyle]="{ backgroundImage: 'url(assets/' + artist.image + ')'}"></div>
+
+  <div class="artist-information-container">
+    <header>
+      <h2 class="artist-name">{{ artist.name }}</h2>
+      <h5 class="artist-lifespan">{{ artist.lifespan }}</h5>
+    </header>
+
+    <section>
+      <p class="artist-information">{{ artist.information }}</p>
+    </section>
+  </div>
+</div>

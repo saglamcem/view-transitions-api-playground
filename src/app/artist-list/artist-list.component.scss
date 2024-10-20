@@ -1,0 +1,28 @@
+.card {
+  max-width: 400px;
+  width: 100%;
+}
+
+.header-image {
+  object-fit: cover;
+  height: 300px;
+}
+
+.artist-list-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10vh 5vw;
+}
+
+.artist-list-container {
+  display: flex;
+  gap: 20px;
+
+  mat-card .mat-mdc-card-content {
+    padding-top: 16px;
+    line-height: 24px;
+    flex: 1;
+  }
+}

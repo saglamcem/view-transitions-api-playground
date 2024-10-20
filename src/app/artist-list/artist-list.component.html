@@ -1,0 +1,37 @@
+<div class="artist-list-page-container">
+  <h2>Artists</h2>
+
+  <form>
+    <mat-form-field class="example-form-field">
+      <mat-label>Clearable input</mat-label>
+      <input matInput type="text" [formControl]="artistSearchInput">
+    </mat-form-field>
+  </form>
+
+  <div class="artist-list-container">
+    <ng-container *ngFor="let artist of filteredArtists$ | async">
+      <mat-card class="card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{ artist.name }}</mat-card-title>
+          <mat-card-subtitle>{{ artist.lifespan }}</mat-card-subtitle>
+        </mat-card-header>
+        <img
+          class="header-image img-responsive"
+          mat-card-image
+          src="assets/{{artist.image}}"
+          [alt]="artist.name"
+        >
+        <mat-card-content>
+          <p>
+            {{ artist.information.slice(0, 100) }}...
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary" [routerLink]="['/artists/', artist.id]">
+            Read More
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>
